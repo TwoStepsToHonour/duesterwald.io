@@ -11,85 +11,19 @@
             $(document).ready(function() {
                 var square = $(".charakter").css("width");
                 $(".charakter").css("height", square);
-            })
-            
-        </script>
-        
-        <style type="text/css">
-        	
-			body {
-				background-color: #550000;
-			}
-			
-            #main {
-				height: 600px;
-                min-width: 300px;
-				max-width: 625px;
-				margin: auto;
-			}
-            
-			h2 {
-				color: white;
-				font-family: Amatic SC, Sans-Serif;
-				font-size: 3em;
-                letter-spacing: 2px;
-                font-weight: 300;
-                padding-left: 5px;
-                margin: 0px;
-			}
-			
-            h3 {
-                color: white;
-				font-family: Open Sans Condensed, Sans-Serif;
-				font-size: 3em;
-                letter-spacing: 2px;
-                font-weight: 300;
-                padding-left: 5px;
-                margin: 0px;
-            }
-            
-			input {
-				background-color: #330000;
-				border: 0px;
-				height: 70px;
-				width: 30%;
-				
-			}
-			
-            div.box {
-                background-color: #440000;
-                margin-bottom: 10px;
-            }
-            
-            div.charContainer {
-                padding-left: 4px;
-            }
-			
-			.charakter {
-				height: 120px;
-				width: 23%;
-                min-width: 95px;
-				max-width: 120px;
-				background-color: #220000;
-				display: inline-flex;
-			}
-			
-        </style>
-<!DOCTYPE html>
-<html>
-    <head>
-        <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
-    </head>
-
-    <body>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>   
-        <script language="javascript" type="text/javascript">
-            $(document).ready(function() {
-                var square = $(".charakter").css("width");
-                $(".charakter").css("height", square);
                 
-            })
+                $.getScript('http://imakewebthings.com/jquery-waypoints/waypoints.min.js', function() {
+                    $("#charFix").waypoint(function(direction) {
+                        if (direction == 'down') {
+                            $("#charFix").addClass("fixed");
+                            $("#charTrigger").css("margin-bottom", "40px");
+                        } else {
+                            $("#charFix").removeClass("fixed");
+                            $("#charTrigger").css("margin-bottom", "0px");
+                        };
+                    }, { offset: '30px' });
+                });
+            });
             
         </script>
         
@@ -121,8 +55,16 @@
 				font-family: Open Sans Condensed, Sans-Serif;
 				font-size: 2em;
                 font-weight: 100;
-                padding-left: 40px;
                 margin: 0px;
+            }
+            
+            h4 {
+                color: white;
+				font-family: Open Sans Condensed, Sans-Serif;
+				font-size: 1.5em;
+                font-weight: 100;
+                padding-left: 40px;
+                margin: 0px; 
             }
             
 			input {
@@ -137,15 +79,16 @@
                 font-size: 2em;
                 padding-right: 20px;
                 text-align: right;
+                border-radius: none;
 			}
 			
-            .inputText {
+            h3.inputText {
                 position: absolute;
-                left: 85px;
+                left: 125px;
                 margin-top: 25px;
             }
             
-            input#anzahlSpieler {
+            input.okKnopf {
                 position: relative;
                 float: right;
                 margin-right: 10px;
@@ -161,8 +104,18 @@
             
             div.charContainer {
                 padding-left: 4px;
+                height: 5000px;
             }
 			
+            #charFix {
+                transition: all .5s;
+            }
+            
+            .fixed {
+                position: fixed;
+                top: 30px;
+            }
+            
 			.charakter {
 				height: 120px;
 				width: 23%;
@@ -179,14 +132,21 @@
                 <form>
                     <h3 class="inputText">Spieler</h3>
                     <input type="number" name="player">
-                    <input id="anzahlSpieler" type="submit" value="OK" />
+                    <input class="okKnopf" id="anzahlSpieler" type="submit" value="OK" />
                 </form>
             </div>
             <div class="box" id="werwoelfeAnzahl">
-                <h2>Wieviele Werwölfe sollen im Spiel sein?</h2>
+                <h2>Wieviele Wölfe sollen im Spiel sein?</h2>
+                <h4>Wir würden XX empfehlen.</h4>
+                <form>
+                    <h3 class="inputText">Wölfe</h3>
+                    <input type="number" name="player">
+                    <input class="okKnopf" id="anzahlSpieler" type="submit" value="OK" />
+                </form>
             </div>
             <div class="box" id="charakterWahl">
-                <h2>Welche Charaktere sind im Spiel?</h2>
+                <h2 id="charTrigger">Welche Charaktere sind im Spiel?</h2>
+                <h4 id="charFix">Es fehlen noch XX.</h4>
                 <?php include ("duesterwald.php"); ?>
                 <div class="charContainer">
                     <div class="charakter"></div>
