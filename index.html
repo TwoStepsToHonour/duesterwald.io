@@ -1,262 +1,114 @@
 <!DOCTYPE html>
 <html>
     <head>
-    
+        <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
     </head>
 
     <body>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>   
         <script language="javascript" type="text/javascript">
-            $(document).ready(function(){
-				$("#mehrAnmeldeformularKnopf").click(function(){
-					if ( $(this).text() === "mehr") {
-						$(".knopf").text("mehr");
-						$(this).text("weniger");
-						slideAllUp();
-        				$("#mehrAnmeldeformular").slideToggle("slow");
-					} else  {
-						$(".knopf").text("mehr");
-						slideAllUp();
-					};
-				});
-				$("#mehrGesundheitsfragebogenKnopf").click(function(){
-					if ( $(this).text() === "mehr") {
-						$(".knopf").text("mehr");
-						$(this).text("weniger");
-						slideAllUp();
-        				$("#mehrGesundheitsfragebogen").slideToggle("slow");
-					} else  {
-						$(".knopf").text("mehr")
-						slideAllUp();
-					};
-				});
-				$("#mehrPacklisteKnopf").click(function(){
-					if ( $(this).text() === "mehr") {
-						$(".knopf").text("mehr");
-						$(this).text("weniger");
-						slideAllUp();
-        				$("#mehrPackliste").slideToggle("slow");
-					} else  {
-						$(".knopf").text("mehr");
-						slideAllUp();
-					};
-				});
-				$("#mehrTricksKnopf").click(function(){
-					if ( $(this).text() === "mehr") {
-						$(".knopf").text("mehr");
-						$(this).text("weniger");
-						slideAllUp();
-        			$("#mehrTricks").slideToggle("slow");
-					} else  {
-						$(".knopf").text("mehr");
-						slideAllUp();
-					};
-				});
-				$("#mehrZeckenKnopf").click(function(){
-					if ( $(this).text() === "mehr") {
-						$(".knopf").text("mehr");
-						$(this).text("weniger");
-						slideAllUp();
-        				$("#mehrZecken").slideToggle("slow");
-					} else  {
-						$(".knopf").text("mehr");
-						slideAllUp();
-					};
-				});
-				$(".downloadBox").mouseenter(function(){
-					$(this).find("p").addClass("clickHereActive")
-				});
-				$(".downloadBox").mouseleave(function(){
-					$(this).find("p").removeClass("clickHereActive")
-				});	
-			});
-			
-			function slideAllUp() {
-				$("#mehrAnmeldeformular").slideUp("slow");
-				$("#mehrGesundheitsfragebogen").slideUp("slow");
-				$("#mehrPackliste").slideUp("slow");
-				$("#mehrTricks").slideUp("slow");
-				$("#mehrPackliste").slideUp("slow");
-				$("#mehrZecken").slideUp("slow");
-			}
+            $(document).ready(function() {
+                var square = $(".charakter").css("width");
+                $(".charakter").css("height", square);
+            })
+            
         </script>
         
         <style type="text/css">
         	
 			body {
-				overflow-y: scroll;
+				background-color: #550000;
 			}
 			
-			#mainLayout {
-				width: 740px;
-				margin-left: -11px;
+            #main {
+				height: 600px;
+                min-width: 300px;
+				max-width: 625px;
+				margin: auto;
 			}
-			
+            
 			h2 {
-				width: 405px;
-				font-family: Trebuchet MS, sans-serif;
-				font-size: 25px;
-				margin: 0px;
+				color: white;
+				font-family: Amatic SC, Sans-Serif;
+				font-size: 3em;
+                letter-spacing: 2px;
+                font-weight: 300;
+                padding-left: 5px;
+                margin: 0px;
 			}
 			
-			p {
-				font-family: Verdana, sans-serif;
-				margin: 0px;
+            h3 {
+                color: white;
+				font-family: Open Sans Condensed, Sans-Serif;
+				font-size: 3em;
+                letter-spacing: 2px;
+                font-weight: 300;
+                padding-left: 5px;
+                margin: 0px;
+            }
+            
+			input {
+				background-color: #330000;
+				border: 0px;
+				height: 70px;
+				width: 30%;
+				
 			}
 			
-			.farbwechselLink {
-				color: black;
-				-webkit-transition: color .5s;
-				transition: color .5s;
-			}
+            div.box {
+                background-color: #440000;
+                margin-bottom: 10px;
+            }
+            
+            div.charContainer {
+                padding-left: 4px;
+            }
 			
-			.farbwechselLink:hover {
-				color: blue;
-			}
-			
-			.parts {
-				margin-left: 20px;
-				margin-top: 25px;
-				height: auto;
-			}
-			
-			.shortDescription {
-				margin-top: 5px;
-				margin-left: 5px;
-				width: 470px;
-				font-size: 15px;
-				height: 40px;
-			}
-			
-			.button {
-				float: right;
-				margin-right: 10px;
-				margin-top: 7px;
-				width: 70px;
-				border-radius: 100%;
-				-webkit-transition: width .5s, margin-right .5s, margin-top .5s;
-				transition: width .5s, margin-right .5s, margin-top .5s;
-			}
-			
-			.button:hover {
-				width: 86px;
-				margin-top: 0px;
-				margin-right: 2px;
-			}
-			
-			.knopf {
-				color: darkgrey;
-				-webkit-transition: color .5s;
-				transition: color .5s;
-			}
-			
-			.knopf:hover {
-				color: lightgrey;
-			}
-			
-			.weniger {
-				display: none;
-			}
-			
-			.clickHere {
-				float: right;
-				width: 130px;
-				margin-top: 23px;
-				margin-right: 10px;
-				font-size: 15px;
-				text-align: center;
-				color: lightgrey;
-				-webkit-transition: color .5s;
-				transition: color .5s;
-			}
-			
-			.clickHereActive{
-				color: darkgrey;
-			}
-			
-			.mehrInhalt {
-				display: none;
-				margin-top: 5px;
-				margin-left: 5px;
-				width: 470px;
-				font-size: 15px;
-			}
-			
-			.downloadBox {
-				float: right;
-				width: 230px;
-				height: 
-			}
-			
-			#trennlinie {
-				margin-top: 20px;
-			}
-			
-			#adobeHinweis {
-				text-align: center;
-				font-size: 15px;
-				width: 600px;
-				margin-left: 70px;
-				margin-top: 30px;
-				padding-bottom: 30px;
+			.charakter {
+				height: 120px;
+				width: 23%;
+                min-width: 95px;
+				max-width: 120px;
+				background-color: #220000;
+				display: inline-flex;
 			}
 			
         </style>
-        
-		<div id="mainLayout">
-			<div class="parts">
-				<div class="downloadBox">
-					<a href="http://zeltlager-stulrich.npage.de/get_file.php?id=30019082&amp;vnr=329040" ><p class="clickHere">Zum Download hier klicken</p></a>
-					<a href="http://zeltlager-stulrich.npage.de/get_file.php?id=30019082&amp;vnr=329040" ><img class="button" alt="" src="http://file2.npage.de/014309/86/bilder/download.jpg" /></a>
-				</div>
-				<h2>Anmeldeformular</h2>
-				<p class="shortDescription">Mit diesem Formular können Sie sich beim Zeltlager St. Ulrich anmelden. <span class="knopf" id="mehrAnmeldeformularKnopf">mehr</span></p>
-				<p class="mehrInhalt" id="mehrAnmeldeformular">Der Preis für das Zeltlager beträgt 210€. Bei Geschwistern zahlt ein Kind den vollen Betrag und jedes weitere Kind 190€. Ein Zuschuss aus dem Landesjugendplan oder durch den Stadtpass der Stadt Kirchheim kann beantragt werden, bitte auf der Anmeldung entsprechend ankreuzen. Die ausgefüllte Anmeldung geben Sie bitte am <a class="farbwechselLink" href="/kontakt.html">Pfarrbüro St. Ulrich</a> ab.</p>
-			</div>
-			<div class="parts">
-				<div class="downloadBox">
-					<a href="http://zeltlager-stulrich.npage.de/get_file.php?id=30019082&amp;vnr=329040" ><p class="clickHere">Zum Download hier klicken</p></a>
-					<a href="http://zeltlager-stulrich.npage.de/get_file.php?id=30019082&amp;vnr=329040" ><img class="button" alt="" src="http://file2.npage.de/014309/86/bilder/download.jpg" /></a>
-				</div>
-				<h2>Gesundheitsfragebogen</h2>
-				<p class="shortDescription">Muss vor Beginn des Zeltlagers beim Pfarrbüro St. Ulrich eingegangen sein. <span class="knopf" id="mehrGesundheitsfragebogenKnopf">mehr</span></p>
-				<p class="mehrInhalt" id="mehrGesundheitsfragebogen">Nach Ihrer Anmeldung wird Ihnen eine Anmeldebestätigung samt Gesundheitsfragebogen zugeschickt. Falls Sie diesen verlegt haben oder alles auf ein Mal abhaken möchten, können Sie hier den Gesundheitsfragebogen herunterladen. Er muss bis spätestens zum Beginn des Zeltlagers im <a class="farbwechselLink" href="/kontakt.html">Pfarrbüro St. Ulrich</a> oder der Lagerleitung eingegangen/abgegeben worden sein.</p>
-			</div>
-			<div class="parts">
-				<div class="downloadBox">
-					<a href="http://zeltlager-stulrich.npage.de/get_file.php?id=30019082&amp;vnr=329040" ><p class="clickHere">Zum Download hier klicken</p></a>
-					<a href="http://zeltlager-stulrich.npage.de/get_file.php?id=30019082&amp;vnr=329040" ><img class="button" alt="" src="http://file2.npage.de/014309/86/bilder/download.jpg" /></a>
-				</div>
-				<h2>Packliste</h2>
-				<p class="shortDescription">Die Packliste hilft Ihnen Ihrem Kind die richtigen Dinge einzupacken. <span class="knopf" id="mehrPacklisteKnopf">mehr</span></p>
-				<p class="mehrInhalt" id="mehrPackliste">Die Packliste wird beim Vortreffen ausgeteilt, allen die da nicht Anwesend sein können schicken wir sie jedoch zu. Falls wir das vergessen haben sollten können Sie die Liste hier nochmals herunterladen</p>
-			</div>
-			<div class="parts">
-				<div class="downloadBox">
-					<a href="http://zeltlager-stulrich.npage.de/get_file.php?id=30019082&amp;vnr=329040" ><p class="clickHere">Zum Download hier klicken</p></a>
-					<a href="http://zeltlager-stulrich.npage.de/get_file.php?id=30019082&amp;vnr=329040" ><img class="button" alt="" src="http://file2.npage.de/014309/86/bilder/download.jpg" /></a>
-				</div>
-				<h2>Tipps und Tricks vor der Abfahrt</h2>
-				<p class="shortDescription">Eine kleine Sammlung von Techniken die Ihnen und Ihren Kindern die Abfahrt erleichtern. <span class="knopf" id="mehrTricksKnopf">mehr</span></p>
-				<p class="mehrInhalt" id="mehrTricks">Wie die Packliste wird auch "Tipps und Tricks vor der Abfahrt" am Vortreffen ausgeteilt oder Ihnen ggf. per Post zugeschickt.</p>
-			</div>
-			<div class="parts">
-				<div class="downloadBox">
-					<a href="http://zeltlager-stulrich.npage.de/get_file.php?id=30019082&amp;vnr=329040" ><p class="clickHere">Zum Download hier klicken</p></a>
-					<a href="http://zeltlager-stulrich.npage.de/get_file.php?id=30019082&amp;vnr=329040" ><img class="button" alt="" src="http://file2.npage.de/014309/86/bilder/download.jpg" /></a>
-				</div>
-				<h2>Zecken- Einverständniserklärung</h2>
-				<p class="shortDescription">Diese Einverständniserklärung sollten sie Ihrem Kind ausgefüllt bei der Abfahrt mitgeben. <span class="knopf" id="mehrZeckenKnopf">mehr</span></p>
-				<p class="mehrInhalt" id="mehrZecken">Die Einverständniserklärung, die wir Ihnen auch am Vortreffen oder ggf. per Post zukommen lassen, erlaubt es unserem Lagerarzt Zecken von Ihrem Kind zu entfernen.</p>
-			</div>
-			<hr id="trennlinie"/>
-
-			<p id="adobeHinweis">
-				Bei allen Dateien handelt es sich um pdf-Dateien, die sich mit dem kostenlosen Programm&nbsp;<a class="farbwechselLink" href="https://get.adobe.com/reader/?loc=de" target="_blank">Adobe Reader</a>&nbsp;&ouml;ffnen lassen.
-			</p>
-			
-
-		
+        <div id="main">
+            <div class="box" id="charakterWahl">
+                <h2>Wieviele Spieler spielen mit?</h2>
+                <form>
+                    <h3>Anzahl Mitspieler</h3>
+                    <input type="number">
+                </form>
+            </div>
+            <div class="box" id="charakterWahl">
+                <h2>Wieviele Werwölfe sollen im Spiel sein?</h2>
+                
+            </div>
+            <div class="box" id="charakterWahl">
+                <h2>Welche Charaktere sind im Spiel?</h2>
+                <div class="charContainer">
+                    <div class="charakter"></div>
+                    <div class="charakter"></div>
+                    <div class="charakter"></div>
+                    <div class="charakter"></div>
+                    <div class="charakter"></div>
+                    <div class="charakter"></div>
+                    <div class="charakter"></div>
+                    <div class="charakter"></div>
+                    <div class="charakter"></div>
+                    <div class="charakter"></div>
+                    <div class="charakter"></div>
+                    <div class="charakter"></div>
+                    <div class="charakter"></div>
+                    <div class="charakter"></div>
+                    <div class="charakter"></div>
+                    <div class="charakter"></div>
+                </div>
+            </div>
+            
 		</div>
         
         
