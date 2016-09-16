@@ -81,6 +81,7 @@
                 <form>
                     <h3>Anzahl Mitspieler</h3>
                     <input type="number" name="player">
+                    <input type="submit" value="Bestätigen" />
                 </form>
             </div>
             <div class="box" id="charakterWahl">
@@ -89,6 +90,9 @@
             </div>
             <div class="box" id="charakterWahl">
                 <h2>Welche Charaktere sind im Spiel?</h2>
+                <?php
+                  echo "Noch $_GET[player] weitere Karten";
+                ?>
                 <div class="charContainer">
                     <div class="charakter"></div>
                     <div class="charakter"></div>
