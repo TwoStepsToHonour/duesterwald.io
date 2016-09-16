@@ -75,18 +75,115 @@
 			}
 			
         </style>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+    </head>
+
+    <body>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>   
+        <script language="javascript" type="text/javascript">
+            $(document).ready(function() {
+                var square = $(".charakter").css("width");
+                $(".charakter").css("height", square);
+                
+            })
+            
+        </script>
+        
+        <style type="text/css">
+        	
+			body {
+				background-color: #550000;
+			}
+			
+            #main {
+				height: 600px;
+                min-width: 300px;
+				max-width: 625px;
+				margin: auto;
+			}
+            
+			h2 {
+				color: white;
+				font-family: Amatic SC, Sans-Serif;
+				font-size: 3em;
+                letter-spacing: 2px;
+                font-weight: 300;
+                padding-left: 5px;
+                margin: 0px;
+			}
+			
+            h3 {
+                color: white;
+				font-family: Open Sans Condensed, Sans-Serif;
+				font-size: 2em;
+                font-weight: 100;
+                padding-left: 40px;
+                margin: 0px;
+            }
+            
+			input {
+				background-color: #330000;
+				border: 0px;
+				height: 70px;
+                width: 80px;
+				
+                margin: 10px;
+				color: white;
+                font-family: Open Sans Condensed, Sans-Serif;
+                font-size: 2em;
+                padding-right: 20px;
+                text-align: right;
+			}
+			
+            .inputText {
+                position: absolute;
+                left: 85px;
+                margin-top: 25px;
+            }
+            
+            input#anzahlSpieler {
+                position: relative;
+                float: right;
+                margin-right: 10px;
+                width: 80px;
+                padding-right: 27px
+            }
+            
+            div.box {
+                background-color: #440000;
+                margin-bottom: 10px;
+                position: relative;
+            }
+            
+            div.charContainer {
+                padding-left: 4px;
+            }
+			
+			.charakter {
+				height: 120px;
+				width: 23%;
+                min-width: 95px;
+				max-width: 120px;
+				background-color: #220000;
+				display: inline-flex;
+			}
+			
+        </style>
         <div id="main">
-            <div class="box" id="charakterWahl">
+            <div class="box" id="mitspielerAnzahl">
                 <h2>Wieviele Spieler spielen mit?</h2>
                 <form>
-                    <h3>Anzahl Mitspieler</h3>
+                    <h3 class="inputText">Spieler</h3>
                     <input type="number" name="player">
-                    <input type="submit" value="Bestätigen" />
+                    <input id="anzahlSpieler" type="submit" value="OK" />
                 </form>
             </div>
-            <div class="box" id="charakterWahl">
+            <div class="box" id="werwoelfeAnzahl">
                 <h2>Wieviele Werwölfe sollen im Spiel sein?</h2>
-                
             </div>
             <div class="box" id="charakterWahl">
                 <h2>Welche Charaktere sind im Spiel?</h2>
